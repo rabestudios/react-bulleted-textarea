@@ -1,10 +1,17 @@
 import React from 'react'
-
-import { ExampleComponent } from 'react-bulleted-textarea'
-import 'react-bulleted-textarea/dist/index.css'
+import { BulletedTextArea } from 'react-bulleted-textarea'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const values = ['a', 'b', 'c']
+
+  return (
+    <div style={{ padding: 20 }}>
+      <BulletedTextArea
+        onChange={(values) => console.log(values)}
+        values={values}
+      />
+    </div>
+  )
 }
 
 export default App

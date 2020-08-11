@@ -2,7 +2,7 @@
   "name": "react-bulleted-textarea",
   "version": "1.0.0",
   "description": "React component for bulleted textarea",
-  "author": "chrisrabe",
+  "author": "rabestudios",
   "license": "MIT",
   "repository": "chrisrabe/react-bulleted-textarea",
   "main": "dist/index.js",
@@ -49,5 +49,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "styled-components": "^5.1.1"
+  }
 }
