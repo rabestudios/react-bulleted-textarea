@@ -4,7 +4,7 @@
   "description": "React component for bulleted textarea",
   "author": "rabestudios",
   "license": "MIT",
-  "repository": "chrisrabe/react-bulleted-textarea",
+  "repository": "https://github.com/rabestudios/react-bulleted-textarea",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

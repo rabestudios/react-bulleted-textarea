@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/react-bulleted-textarea.svg)](https://www.npmjs.com/package/react-bulleted-textarea) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-Check out live [demo]()
+Check out live [demo](https://react-bulleted-textarea.herokuapp.com/)
 
 ## Install
 
