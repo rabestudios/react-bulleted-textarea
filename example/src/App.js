@@ -1,16 +1,23 @@
+import 'typeface-roboto'
 import React from 'react'
-import { BulletedTextArea } from 'react-bulleted-textarea'
+import styled from 'styled-components'
+import Header from './Header'
+import Demo from './Demo'
+import Grid from '@material-ui/core/Grid'
+
+const AppBody = styled(Grid)`
+  padding: 20px;
+  height: 100%;
+`
 
 const App = () => {
-  const values = ['a', 'b', 'c']
-
   return (
-    <div style={{ padding: 20 }}>
-      <BulletedTextArea
-        onChange={(values) => console.log(values)}
-        values={values}
-      />
-    </div>
+    <>
+      <Header />
+      <AppBody container>
+        <Demo />
+      </AppBody>
+    </>
   )
 }
 
