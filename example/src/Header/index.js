@@ -56,12 +56,26 @@ const Header = () => {
       <VersionText>v1.0.0</VersionText>
       <QuickLinks>
         <Tooltip title='Contribute'>
-          <IconButton>
+          <IconButton
+            onClick={() =>
+              window.open(
+                'https://github.com/rabestudios/react-bulleted-textarea',
+                '_blank'
+              )
+            }
+          >
             <GithubLogo />
           </IconButton>
         </Tooltip>
         <Tooltip title='Report issues'>
-          <IconButton>
+          <IconButton
+            onClick={() =>
+              window.open(
+                'https://github.com/rabestudios/react-bulleted-textarea/issues',
+                '_blank'
+              )
+            }
+          >
             <BugReportLogo />
           </IconButton>
         </Tooltip>
