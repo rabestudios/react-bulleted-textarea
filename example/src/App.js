@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Header from './Header'
 import Demo from './Demo'
 import Grid from '@material-ui/core/Grid'
+import Description from './Description'
 
 const AppBody = styled(Grid)`
   padding: 20px;
@@ -14,8 +15,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <AppBody container>
+      <AppBody container spacing={3}>
         <Demo />
+        <Description />
       </AppBody>
     </>
   )

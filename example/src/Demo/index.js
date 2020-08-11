@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { BulletedTextArea } from 'react-bulleted-textarea'
+import BulletedTextArea from 'react-bulleted-textarea'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Collapse from '@material-ui/core/Collapse'
 import { Code } from '@material-ui/icons'
 import AceEditor from 'react-ace'
+import { Heading } from '../styles'
 
 import 'ace-builds/webpack-resolver'
 import 'ace-builds/src-min-noconflict/mode-javascript'
 import 'ace-builds/src-min-noconflict/theme-monokai'
-
-const Heading = styled.p`
-  font-family: Roboto;
-  font-weight: 300;
-  font-size: 20px;
-  margin: 0;
-  margin-bottom: 20px;
-`
 
 const SourceDivider = styled.div`
   width: 100%;
@@ -26,7 +19,7 @@ const SourceDivider = styled.div`
 
 const sourceCode = `
 import React from "react";
-import { BulletedTextArea } from "react-bulleted-textarea";
+import BulletedTextArea from "react-bulleted-textarea";
 
 const Demo = () => {
     const values = ['a', 'b', 'c'];

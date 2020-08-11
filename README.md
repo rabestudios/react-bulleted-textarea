@@ -4,6 +4,8 @@
 
 [![NPM](https://img.shields.io/npm/v/react-bulleted-textarea.svg)](https://www.npmjs.com/package/react-bulleted-textarea) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+Check out live [demo]()
+
 ## Install
 
 ```bash
@@ -13,17 +15,35 @@ npm install --save react-bulleted-textarea
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'react-bulleted-textarea'
-import 'react-bulleted-textarea/dist/index.css'
+import BulletedTextArea from 'react-bulleted-textarea'
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    const values = ['a', 'b', 'c']
+    const handleChange = (values) => {
+      console.log(values) // [a, b, c]
+    }
+    const bulletChar = '-' // optional
+    return (
+      <BulletedTextArea
+        onChange={handleChange}
+        values={values}
+        bulletChar={bulletChar}
+      />
+    )
   }
 }
 ```
+
+## Props
+
+| Prop Name  | Type | Required  | Default Value  | Description  |
+|---|---|---|---|---|
+| onChange  | (values: string[]) => void  | true  | n/a  | Function that is called everytime the user writes something in the text area  |
+| values  |  string[] | false  | [ ]  | Initial values for the text area  |
+|  bulletChar | string  | false  | -  | Character used as bullet points  |
 
 ## License
 
