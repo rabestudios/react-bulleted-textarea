@@ -25,7 +25,7 @@ const MuiBulletedTextArea = (props) => {
 
   useEffect(() => {
     setValue(values.join('\n'))
-  }, [values])
+  }, [values, setValue])
 
   return (
     <TextField

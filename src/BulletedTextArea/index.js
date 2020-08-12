@@ -15,7 +15,7 @@ const BulletedTextArea = (props) => {
 
   useEffect(() => {
     setValue(values.join('\n'))
-  }, [values])
+  }, [values, setValue])
 
   const handleChange = useCallback(
     (e) => {
