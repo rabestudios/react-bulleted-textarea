@@ -80,7 +80,14 @@ const Header = () => {
           </IconButton>
         </Tooltip>
         <Tooltip title='NPM registry'>
-          <IconButton>
+          <IconButton
+            onClick={() =>
+              window.open(
+                'https://www.npmjs.com/package/react-bulleted-textarea',
+                '_blank'
+              )
+            }
+          >
             <FolderLogo />
           </IconButton>
         </Tooltip>
