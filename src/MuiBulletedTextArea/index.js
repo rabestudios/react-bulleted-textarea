@@ -29,7 +29,6 @@ const MuiBulletedTextArea = (props) => {
 
   return (
     <TextField
-      style={{ whiteSpace: 'nowrap' }}
       variant='outlined'
       multiline
       InputProps={{
