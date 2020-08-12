@@ -51,6 +51,7 @@
     "dist"
   ],
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
     "prop-types": "^15.7.2",
     "styled-components": "^5.1.1"
   }
