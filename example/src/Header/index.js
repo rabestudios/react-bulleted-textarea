@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <Container>
       <Title>Bulleted TextArea Demo</Title>
-      <VersionText>v1.0.0</VersionText>
+      <VersionText>v1.1.0</VersionText>
       <QuickLinks>
         <Tooltip title='Contribute'>
           <IconButton
