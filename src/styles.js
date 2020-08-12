@@ -62,9 +62,3 @@ export const Bullet = styled.p`
   line-height: 1.1876em;
   color: rgba(0, 0, 0, 0.5);
 `
-
-export const bulletStyle = {
-  margin: 0,
-  lineHeight: '1.1876em',
-  color: 'rgba(0,0,0,0.50)'
-}

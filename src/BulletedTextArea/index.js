@@ -6,7 +6,7 @@ import {
   BulletContainer,
   Bullet,
   BASE_HEIGHT
-} from './styles'
+} from '../styles'
 
 const BulletedTextArea = (props) => {
   const { bulletChar, onChange, values, ...rest } = props
