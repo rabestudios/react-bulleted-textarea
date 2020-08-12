@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import TextField from '@material-ui/core/TextField'
 import BulletAdornment from './BulletAdornment'
@@ -23,9 +23,12 @@ const MuiBulletedTextArea = (props) => {
     [setValue, setLines, lines, onChange]
   )
 
+  useEffect(() => {
+    setValue(values.join('\n'))
+  }, [values, setValue])
+
   return (
     <TextField
-      style={{ whiteSpace: 'nowrap' }}
       variant='outlined'
       multiline
       InputProps={{

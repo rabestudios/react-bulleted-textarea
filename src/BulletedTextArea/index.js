@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   TextArea,
@@ -12,6 +12,10 @@ const BulletedTextArea = (props) => {
   const { bulletChar, onChange, values, ...rest } = props
   const [lines, setLines] = useState(values.length > 0 ? values.length : 1)
   const [value, setValue] = useState(values.join('\n'))
+
+  useEffect(() => {
+    setValue(values.join('\n'))
+  }, [values, setValue])
 
   const handleChange = useCallback(
     (e) => {
