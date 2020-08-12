@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import BulletedTextArea from 'react-bulleted-textarea'
+import { BulletedTextArea, MuiBulletedTextArea } from 'react-bulleted-textarea'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Collapse from '@material-ui/core/Collapse'
@@ -37,12 +37,12 @@ export default Demo;
 `
 
 const Demo = () => {
-  const [open, setOpen] = useState(true)
+  const [defaultOpen, setDefaultOpen] = useState(false)
   const values = ['a', 'b', 'c']
 
   return (
     <Grid item xs={12} md={6}>
-      <Heading variant='body1'>Text Area</Heading>
+      <Heading variant='body1'>Default Text Area</Heading>
       <BulletedTextArea
         onChange={(value) => console.log(value)}
         values={values}
@@ -53,12 +53,12 @@ const Demo = () => {
           color='default'
           size='small'
           startIcon={<Code />}
-          onClick={() => setOpen(!open)}
+          onClick={() => setDefaultOpen(!defaultOpen)}
         >
           Show Source
         </Button>
       </SourceDivider>
-      <Collapse in={open} timeout='auto' unmountOnExit>
+      <Collapse in={defaultOpen} timeout='auto' unmountOnExit>
         <AceEditor
           mode='javascript'
           theme='monokai'
@@ -68,6 +68,11 @@ const Demo = () => {
           setOptions={{ useWorker: false }}
         />
       </Collapse>
+      <Heading>Material UI Text Area</Heading>
+      <MuiBulletedTextArea
+        onChange={(values) => console.log(values)}
+        values={values}
+      />
     </Grid>
   )
 }
