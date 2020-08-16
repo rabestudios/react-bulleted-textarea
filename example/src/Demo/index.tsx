@@ -74,7 +74,7 @@ const Demo = () => {
 
   return (
     <Grid item xs={12} md={6}>
-      <Heading variant='body1'>Default Bulleted Text Area</Heading>
+      <Heading>Default Bulleted Text Area</Heading>
       <Body>Bulleted text area using styled-components. (Warning: Kinda buggy when mixed with material-ui)</Body>
       <BulletedTextArea
         onChange={(value) => console.log(value)}

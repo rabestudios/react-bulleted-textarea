@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const BASE_HEIGHT = 19
+export const BASE_HEIGHT: number = 19
 
-export const Container = styled(({ height, ...rest }) => <div {...rest} />)`
+export const Container = styled(({ height, ...rest }) => {
+  return <div {...rest} />
+})`
   height: ${(props) => props.height}px;
   display: flex;
   flex-direction: row;

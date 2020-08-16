@@ -14,10 +14,13 @@ npm install --save react-bulleted-textarea
 
 ## Usage
 
+### Default Bulleted Text Area
+Bulleted text area build with styled components library. (Gets buggy when used with material-ui)
+
 ```jsx
 import React from 'react'
 
-import BulletedTextArea from 'react-bulleted-textarea'
+import { BulletedTextArea } from 'react-bulleted-textarea'
 
 class Example extends Component {
   render() {
@@ -28,6 +31,32 @@ class Example extends Component {
     const bulletChar = '-' // optional
     return (
       <BulletedTextArea
+        onChange={handleChange}
+        values={values}
+        bulletChar={bulletChar}
+      />
+    )
+  }
+}
+```
+
+### Material-UI Bulleted Text Area
+Bulleted Text Area used with material ui components
+
+```jsx
+import React from 'react'
+
+import { MuiBulletedTextArea } from 'react-bulleted-textarea'
+
+class Example extends Component {
+  render() {
+    const values = ['a', 'b', 'c']
+    const handleChange = (values) => {
+      console.log(values) // [a, b, c]
+    }
+    const bulletChar = '-' // optional
+    return (
+      <MuiBulletedTextArea
         onChange={handleChange}
         values={values}
         bulletChar={bulletChar}
