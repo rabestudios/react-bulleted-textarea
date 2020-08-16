@@ -56,7 +56,7 @@ class Example extends Component {
     }
     const bulletChar = '-' // optional
     return (
-      <BulletedTextArea
+      <MuiBulletedTextArea
         onChange={handleChange}
         values={values}
         bulletChar={bulletChar}
