@@ -1,32 +1,37 @@
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import {
   TextArea,
   Container,
-  BulletContainer,
   Bullet,
+  BulletContainer,
   BASE_HEIGHT
-} from '../styles'
+} from '../../styles'
 
-const BulletedTextArea = (props) => {
+export interface BulletedTextAreaProps {
+  onChange: (values: string[]) => void
+  values: string[]
+  bulletChar?: string
+}
+
+const BulletedTextArea: React.FC<BulletedTextAreaProps> = (props) => {
   const { bulletChar, onChange, values, ...rest } = props
   const [lines, setLines] = useState(values.length > 0 ? values.length : 1)
   const [value, setValue] = useState(values.join('\n'))
 
   useEffect(() => {
     setValue(values.join('\n'))
-  }, [values, setValue])
+  }, [values])
 
   const handleChange = useCallback(
     (e) => {
       const newValue = e.target.value
-      const curLines = newValue.split('\n').length
+      const values = newValue.split('\n')
+      const curLines = values.length
       if (curLines !== lines) {
         setLines(curLines)
       }
       setValue(newValue)
       // split the values and return array
-      const values = newValue.trim().split('\n')
       onChange(values)
     },
     [setValue, setLines, lines, onChange]
@@ -57,12 +62,6 @@ const BulletedTextArea = (props) => {
       </Container>
     )
   }, [value, lines, handleChange])
-}
-
-BulletedTextArea.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  values: PropTypes.arrayOf(PropTypes.string),
-  bulletChar: PropTypes.string
 }
 
 BulletedTextArea.defaultProps = {

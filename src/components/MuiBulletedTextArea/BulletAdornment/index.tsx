@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import InputAdornment from '@material-ui/core/InputAdornment'
 import styled from 'styled-components'
-import { Bullet } from '../../styles'
+import { Bullet } from '../../../styles'
 
 const StyledAdornment = styled(InputAdornment)`
   flex-direction: column;
@@ -10,14 +9,16 @@ const StyledAdornment = styled(InputAdornment)`
   height: unset;
 `
 
-const BulletAdornment = (props) => {
+export interface BulletAdornmentProps {
+  bulletChar?: string
+  lines: number
+}
+
+const BulletAdornment: React.FC<BulletAdornmentProps> = (props) => {
   const { bulletChar, lines } = props
   const bullets = new Array(lines).fill(bulletChar)
   return (
-    <StyledAdornment
-      position='start'
-      style={{ flexDirection: 'column', maxHeight: 'unset', height: 'unset' }}
-    >
+    <StyledAdornment position='start'>
       {bullets.map((bullet, i) => (
         <Bullet key={`bullet-${i}`}>{bullet}</Bullet>
       ))}
@@ -25,9 +26,8 @@ const BulletAdornment = (props) => {
   )
 }
 
-BulletAdornment.propTypes = {
-  bulletChar: PropTypes.string.isRequired,
-  lines: PropTypes.number.isRequired
+BulletAdornment.defaultProps = {
+  bulletChar: '-'
 }
 
 export default BulletAdornment
